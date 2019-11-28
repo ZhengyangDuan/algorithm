@@ -1,15 +1,7 @@
 
 public class SortAlgorithm {
-	public static void main(String[ ] args) {
-        
-        int[] arr={10,9,8,7,6,5,4,3,2,1,0};
-        printArray(quicksort(arr,0,arr.length-1));
-        printArray(bubble(arr));
-        printArray(select(arr));
-        printArray(heapsort(arr)); 
-        
-    }
-    static int[] bubble(int[] arr){
+	
+    public int[] bubble(int[] arr){
         int n = arr.length;
         for(int i=0;i<n-1;i++){
             for(int j=0;j<n-i-1;j++){
@@ -23,7 +15,7 @@ public class SortAlgorithm {
         return arr;
     } 
     
-    static int[] select(int[] arr){
+    public int[] select(int[] arr){
         int n = arr.length;
         for(int i=0;i<n;i++){
             int temp = arr[i];
@@ -38,7 +30,7 @@ public class SortAlgorithm {
         
         return arr;
     }
-    static int[] heapsort(int[] arr) {
+    public int[] heapsort(int[] arr) {
     	 int n = arr.length; 
     	  
          for (int i = n / 2 - 1; i >= 0; i--) 
@@ -56,7 +48,7 @@ public class SortAlgorithm {
          }
          return arr;
     }
-    static void heapify(int[] arr, int n, int i) {
+    public void heapify(int[] arr, int n, int i) {
     	int largest = i;
         int l = 2*i + 1; 
         int r = 2*i + 2; 
@@ -77,7 +69,7 @@ public class SortAlgorithm {
             heapify(arr, n, largest); 
         }
     } 
-    static int partition(int[] arr, int low, int high) {
+    public int partition(int[] arr, int low, int high) {
     	int pivot = arr[high];  
         int i = (low-1);
         for (int j=low; j<high; j++) 
@@ -97,7 +89,7 @@ public class SortAlgorithm {
         return i+1;
     }
     
-    static int[] quicksort(int[] arr, int low, int high) {
+    public int[] quicksort(int[] arr, int low, int high) {
     	if (low < high) 
         { 
 
@@ -108,7 +100,7 @@ public class SortAlgorithm {
     	return arr;
     }
     
-    static void printArray(int arr[]) 
+    public void printArray(int arr[]) 
     { 
         int n = arr.length; 
         for (int i=0; i<n; ++i) 
